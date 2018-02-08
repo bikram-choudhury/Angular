@@ -1,0 +1,33 @@
+
+@media (min-width: 768px){
+	.navbar-nav > li.header-blue > a {
+		color: #8a6d3b !important;
+	}
+}
+
+.custom-section .form-control{
+    border: 1px solid rgba(49, 112, 143, 0.24);
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+.custom-section .panel-primary > .panel-heading{
+    height: 50px;
+    line-height: 2;
+}
+
+.custom-section .table th{
+	text-align: center;
+}
+
+.custom-section .table th, td{
+	 white-space: nowrap;
+}
+
+.btn.btn-sm{
+	font-size: 15px;
+    padding: 5px 17px;
+}
+
+.custom-section .user-list{
+	padding-left: 30px;
+}

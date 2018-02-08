@@ -1,0 +1,6 @@
+> f291c3ec809dc63a1e4ab6979fcf25b1d30dc59b ( Implemented Gulp for less2css conversion )
+> 5709590dd8d4992221b535a10e5da2cd26bea927 ( Adding underscore library to Angular2 App )
+> e078610ac2e2e35515cd87b64b76c21ccbea4646 ( Implemented ViewChild with ElementRef to get control over one particular element in the DOM)
+> 0b4985b8a52e07a2184cb1302c55038188407872 ( Handeling multiple keyboard events with a custom directive )
+> 703970d02f51c98017043c18ee7491447a299b29 ( update current url globaly to change navbar behaviour )
+> 04fb143c5cbe8b31146eac242b96a463ef7b7c25 ( less2css configuration while starting the app in package.json )

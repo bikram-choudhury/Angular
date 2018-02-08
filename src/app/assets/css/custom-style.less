@@ -1,0 +1,170 @@
+@base: #f00;
+
+.school-section{
+	.panel-section{
+		padding: 0 50px;
+	}
+}
+
+@media (min-width: 768px) {
+	.school-section{
+
+		.main{
+			position: absolute;
+			width: calc(100% - 40px); 
+			margin-left: 40px;
+			float: right;
+		}
+		nav{
+			&.sidebar{
+				width: 200px;
+				height: 100%;
+				float: left;
+				margin-bottom: 0px;
+
+				li{
+					width: 100%;
+				    margin-left: 0;
+				    
+		    		a{
+				    	padding-right: 13px;
+				    }
+				}
+				&:hover{
+					margin-left: 0px;
+				}
+				&:hover + .main{
+					 margin-left: 200px;
+				}
+				&.navbar{
+					&.sidebar>.container{
+						.navbar-brand{
+							margin-left: 0px;
+						}
+					}
+				}
+				.navbar-brand,.navbar-header{
+					text-align: center;
+					width: 100%;
+					margin-left: 0px;
+				}
+
+			    .navbar-collapse,.container-fluid{
+			    	padding: 0 0px 0 0px;
+			    	border: 1px solid rgba(138, 109, 59, 0.48);
+			    }
+			    .navbar-nav{
+			    	& >li{
+			    		border-bottom: 1px #e5e5e5 solid;
+					    background: #FFF;
+					    &.active{
+			    			background: #f5f5f5;
+			    		}
+			    		a:hover{
+		    			    background: #fcf8e3;
+			    		}
+			    	}
+
+			    	.open{
+			    		.dropdown-menu{
+							position: static;
+							float: none;
+							width: auto;
+							margin-top: 0;
+							background-color: #f5f5f5;
+							border: 0;
+							-webkit-box-shadow: none;
+							box-shadow: none;
+			    		}
+			    	}
+			    }
+			}
+			&.navbar{
+				width: 100%;
+			}
+		}
+		.navbar > .container-fluid{
+			.navbar-brand{
+				margin-left: 0px;
+			}
+		}
+		.navbar-inverse {
+			.navbar-nav{
+				.open {
+				 	.dropdown-menu>li>a{
+				 		color: #777;
+				 	}
+				}
+			}
+		}
+
+	}
+}
+
+@media (min-width: 1330px) {
+	.school-section{
+		.main{
+			width: calc(100% - 200px);
+			margin-left: 200px;
+		}
+		nav{
+			&.sidebar{
+				margin-left: 0px;
+				float: left;
+			}
+			.forAnimate{
+				opacity: 1;
+			}
+			&.navbar{
+				width: 100%;
+			}
+		}
+	}
+
+}
+
+.school-section{
+	.navbar{
+		top: 0;
+	}
+	nav{
+		&.sidebar{
+			-webkit-transition: margin 200ms ease-out;
+			-moz-transition: margin 200ms ease-out;
+			-o-transition: margin 200ms ease-out;
+			transition: margin 200ms ease-out;
+			.navbar-nav{
+				.open{
+					.dropdown-menu{
+						li{
+							a{
+								&:hover,&:focus{
+									color: #00a8ff;
+								    background-color: transparent;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&:hover{
+			.forAnimate{
+			    opacity: 1;
+			}
+		}
+	}
+}
+
+.form-group{
+	label{
+		line-height: 2;
+	}
+	.form-control{
+		font-size: 18px;
+		padding: 17px 12px;
+		&::placeholder {
+		    font-size: 14px;
+		}
+	}
+}

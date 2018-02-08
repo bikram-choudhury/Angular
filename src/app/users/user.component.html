@@ -1,0 +1,70 @@
+<section class="section section-padded custom-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="row">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Create Users</div>
+						<div class="panel-body">
+							<form class="" role="form">
+								<input type="text" name="userId" #userIdInput value="" class="form-control" placeholder="user id">
+								<input type="text" name="name" value="" class="form-control" [(ngModel)]="user.name" placeholder="Name">
+								<input type="number" name="age" value="" class="form-control" [(ngModel)]="user.age" placeholder="Age">
+								<input type="number" max="10" name="phone" value="" class="form-control" [(ngModel)]="user.phone" placeholder="Phone">
+								<input type="email" name="email" value="" class="form-control" [(ngModel)]="user.email" placeholder="Email">
+								<input type="date" name="dob" value="" class="form-control" [(ngModel)]="user.dob" placeholder="dob">
+								<input type="text" name="service" value="" class="form-control" [(ngModel)]="user.service" placeholder="Service" >
+								<input type="text" name="designation" value="" class="form-control" [(ngModel)]="user.designation" placeholder="Designation" >
+								<input type="number" name="star" value="" class="form-control" [(ngModel)]="user.star" placeholder="Star">
+
+								<div class="text-center">
+									<button type="button" class="btn btn-lg btn-info" (click)="updateUser()" *ngIf="isEdit">Update</button>
+									<button type="button" class="btn btn-lg btn-success" (click)="saveUser()" *ngIf="!isEdit">Submit</button>
+									<button type="button" class="btn btn-lg btn-warning" (click)="resetUser()">Cancel</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-7 user-list">
+				<div class="row">
+					<div class="panel panel-primary">
+						<div class="panel-heading">List Users</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-bordered" *ngIf="transientUsers">
+									<thead>
+										<tr>
+											<th>Sl No</th><th>Name</th><th>Age</th><th>Mobile No</th><th>Email</th><th>D O B</th><th>Service</th><th>Designation</th><th>Rating</th><th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor="let user of transientUsers; let rowId = index; ">
+											<td>{{rowId+1}}</td>
+											<td>{{user.name}}</td>
+											<td>{{user.age}}</td>
+											<td>{{user.phone}}</td>
+											<td>{{user.email}}</td>
+											<td>{{user.dob | date : 'dd-MM-yyyy'}}</td>
+											<td>{{user.service}}</td>
+											<td>{{user.designation}}</td>
+											<td>{{user.star}}</td>
+											<td>
+												<button type="button" class="btn btn-sm btn-info" (click)="editUser(user._id)">Edit</button>
+												<button type="button" class="btn btn-sm btn-danger" (click)="deleteUser(user._id)">Delete</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+						</div>
+					</div>
+									
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

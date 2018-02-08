@@ -1,0 +1,33 @@
+<div (onHidden)="modalClose($event)" class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content modal-popup">
+			<a href="#" class="close-link" data-dismiss="modal"><i class="icon_close_alt2"></i></a>
+			<h3 class="white" *ngIf="globalVar.isSignup">Sign Up</h3>
+			<h3 class="white" *ngIf="globalVar.isLogin">Sign In</h3>
+			<form action="" class="popup-form" role="form">
+				<input type="text" class="form-control form-white" name="fullname" [(ngModel)]="fullname" placeholder="Full Name" *ngIf="globalVar.isSignup">
+				<input type="text" class="form-control form-white" name="email" [(ngModel)]="email" placeholder="Email Address">
+				<input type="password" class="form-control form-white" name="password" [(ngModel)]="password" placeholder="Password">
+				<div class="dropdown" *ngIf="globalVar.isSignup">
+					<button id="dLabel" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Pricing Plan
+					</button>
+					<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="dLabel">
+						<li class="animated lightSpeedIn" *ngFor="let plan of pricingPlan;" value="{{plan.key}}" (click)="savePlan($event,plan)">
+							<a>{{plan.name}}</a>
+						</li>
+					</ul>
+				</div>
+				<div class="checkbox-holder text-left">
+					<div class="checkbox">
+						<input type="checkbox" value="None" id="squaredOne" name="check" />
+						<label for="squaredOne" *ngIf="globalVar.isSignup"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+						<label for="squaredOne" *ngIf="globalVar.isLogin"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-submit" data-dismiss="modal" (click)="saveUser()" *ngIf="globalVar.isSignup">Submit</button>
+				<button type="submit" class="btn btn-submit" data-dismiss="modal" (click)="LoginUser()" *ngIf="globalVar.isLogin">Login</button>
+			</form>
+		</div>
+	</div>
+</div>
